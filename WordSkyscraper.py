@@ -1,6 +1,15 @@
-text = "YourText"
-height = 6 # height of the Roof -> Building is 2.5 times as high
-vertical = True # Vertical or Horizontal?
+print("Welcome to the WordSkyscraper")
+print("What's your Word?")
+text = str(input())
+print(str("Ok What should be the height of your " + text + "-Building?"))
+height = int(input()) # height of the Roof -> Building is 2.5 times as high
+print("Last Question: Should the building be vertical? [Yes/No]")
+d = str(input())
+if "y" in d or "Y" in d:
+    vertical = True # Vertical or Horizontal?
+else:
+    vertical = False
+    
 
 
 
