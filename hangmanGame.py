@@ -1,13 +1,16 @@
 import random
 
-worter = ["CAR", "TREE", "HOUSE"]
+worter = ["CAR", "TREE", "HOUSE", "QUIZZICAL", "XYLOPHONE",
+    "SPHINX", "JAZZ", "VORTEX", "KALEIDOSCOPE", "WALTZ", "EPIPHANY", "KNOT", "WHIMSICAL",
+          "CAT","SUN","DOG","HAT","SKY","BALL","BOOK","TOY","MAN"]
+
 wor = random.choice(worter)
 liwor = list(wor)
 suc = ["_ "] * len(wor)
-print(wor)
+fehl = 0
 print("Welcome to the hangman game. What is your first guess (tip in one letter)")
 fer = False
-
+print(" ".join(suc))
 while fer == False:
     guess = str(input().upper())
     if guess in wor:
@@ -19,7 +22,9 @@ while fer == False:
         if not "_" in " ".join(suc):
             fer = True
         continue
-            
+    if not guess in wor:
+        fehl = fehl + 1
     print(" ".join(suc))
     
 print("Congratulations!")
+print("You had " + str(fehl) + " failed attemps.")
