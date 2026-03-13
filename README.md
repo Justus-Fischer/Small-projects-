@@ -1,6 +1,6 @@
 A Repository with small projects 
 
-About simpleBruteForce_simulator:
+About passwordStrength_demo.py:
 
 a small project to show how important long passwords are 
 
