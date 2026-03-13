@@ -1,10 +1,22 @@
 import random
 
-worter = ["CAR", "TREE", "HOUSE", "QUIZZICAL", "XYLOPHONE",
-    "SPHINX", "JAZZ", "VORTEX", "KALEIDOSCOPE", "WALTZ", "EPIPHANY", "KNOT", "WHIMSICAL",
-          "CAT","SUN","DOG","HAT","SKY","BALL","BOOK","TOY","MAN"]
+#worter = [,  "QUIZZICAL", "XYLOPHONE",
+ #   "SPHINX", "VORTEX", "KALEIDOSCOPE", "WALTZ", "EPIPHANY" "WHIMSICAL",]
 
-wor = random.choice(worter)
+wordseasy  = ["CAT", "DOG", "BOOK", "TREE","FISH","HAT","CITY","SUN","BALL"
+                "RAT","CAR","PEN","MOON","FARM","BIRD","HOUSE","JAZZ","KNOT"
+                  "SUN","SKY","TOY","MAN" ]
+
+wordshard = ["QWERTZ","QUIZZICAL", "XYLOPHONE", "SPHINX", "VORTEX", "KALEIDOSCOPE",
+                 "WALTZ", "EPIPHANY" "WHIMSICAL","EXQUISITE","JAZZILY","PSYCHOLOGY",
+                    "BUNGALOWS","IMMISCIBLE","ARCHAIC","VORTICITY","GAUCHE","ZEALOUS",
+                        "UNDEFEATED","PHENOMENON"]
+
+print("Choose your difficulty level [easy/hard]")
+if "RD" in input().upper():
+    wor = random.choice(wordshard) 
+else:
+    wor = random.choice(wordseasy)
 liwor = list(wor)
 suc = ["_ "] * len(wor)
 fehl = 0
@@ -35,8 +47,12 @@ while True:
     guess = str(input().upper())
     if "N" in guess:
         break
+    print("Choose your difficulty level [easy/hard]")
+    if "RD" in  input().upper():
+        wor = random.choice(wordshard) 
+    else:
+        wor = random.choice(wordseasy)
     
-    wor = random.choice(worter)
     liwor = list(wor)
     suc = ["_ "] * len(wor)
     fehl = 0
