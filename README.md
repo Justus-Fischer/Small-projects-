@@ -1,14 +1,5 @@
 A Repository with small projects 
 
-About passwordStrength_demo.py:
-
-a small project to show how important long passwords are 
-
-(the simulator cheats because he is already knowing the lenght of the password)
-
-Disclaimer: 
-This tool is for educational purpose only. Do not use it for ilegal activities
-
 How to run the code (Linux):
 
 download the file
