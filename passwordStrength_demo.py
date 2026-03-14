@@ -14,17 +14,29 @@ def gettime(tr):
                     tims = tims / 365
                     if tims > 1000:
                         tims = tims / 1000
-                        return str(str(tims) + " milenials")
+                        if tims > 1000000000:
+                            tims = tims / 1000000000
+                            if tims > 1000000:
+                                return str("infinitely long")
+                            else:
+                                return str(str(round(tims,2)) + " trillion years")
+                            
+                        else:
+                            if tims > 1000000:
+                                tims = tims / 1000000
+                                return str(str(round(tims,2)) + " billion years")
+                            else:
+                                return str(str(round(tims,2)) + " milenials")
                     else:
-                        return str(str(tims) + " years")
+                        return str(str(round(tims,2)) + " years")
                 else:
-                    return str(str(tims) + " days")
+                    return str(str(round(tims,2)) + " days")
             else:
-                return str(str(tims) + " hours")
+                return str(str(round(tims,2)) + " hours")
         else:
-            return str(str(tims) + " minutes")
+            return str(str(round(tims,2)) + " minutes")
     else:
-        return str(str(tims) + " seconds")
+        return str(str(round(tims,2)) + " seconds")
     
     
 def bu(num):
@@ -36,22 +48,32 @@ def bu(num):
         word.append(sp)
 
 print("Type in a password to be tested")
-print("(start with short passwords (2-4 characters long))")
+print("Also test longer and shorter ones to see how the time to find it change")
+#print("(start with short passwords (2-4 characters long))")
 
 
-pas = str(input())
+pas = input()
+
+
+    
 boost = False
-trys = 0
-
-print("Starting speedtest... (duration: 10s)")
+trys = 0    
+print("Starting speedtest... (singlecore, duration: 10s)")
+print(" ")
 st = time.time()
 while time.time() - st < 10:
     bu(len(pas))
     word = []
     trys = trys + 1
-trys = trys / 10    
-print("Your computer manages " +str(f"{trys:,}" +" attemps per second."))
-print("At this speed you would need up to " + gettime(trys) + " to find the password.") 
+trys = trys / 10
+
+print("Your computer manages " +str(f"{trys:,}" +" attemps per second. (singlecore)"))
+print("At this speed you would need up to " + gettime(trys)  + " to find the password. (singlecore)")
+print("statistically, however, only half the time")
+print(" ")
+time.sleep(5)
+print("But a hacker could find it in " + gettime(100000000000) +".")
+print(" ")
 print("Would you like to let your computer try to find the password? [Yes/No]")
 
 if "Y" in input().upper():
