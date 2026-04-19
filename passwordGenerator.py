@@ -22,6 +22,9 @@ while True:
     try:
         n = int(k)
     except:
+        print("Goodbye! Do you want to know how save your new password is?")
+        print('Go to the repository "medium-sized-projects" and find the answer with the')
+        print("passwordStrength_demo")
         break
     
  
