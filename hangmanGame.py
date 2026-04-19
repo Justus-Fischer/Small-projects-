@@ -23,8 +23,8 @@ while True:
     
     print("Welcome to the hangman game. What is your first guess (tip in one letter)")
     fer = False
-    print(" ".join(suc), end="\r")
-    print(" ")
+    print(" ".join(suc))
+    
     while fer == False:
         guess = str(input().upper())
         if guess in wor:
@@ -32,14 +32,14 @@ while True:
                 if liwor[i] == guess:
                     suc[i] = str(guess)
             
-            print(" ".join(suc) + " (" + guess + ")", end="\r")
-            print(" ")
+            print(" ".join(suc) + " (" + guess + ")")
+            
             if not "_" in " ".join(suc):
                 fer = True
             continue
         if not guess in wor:
             fehl = fehl + 1
-        print(" ".join(suc) + " (" + guess + ")", end="\r")
+        print(" ".join(suc) + " (" + guess + ")")
     
     print("Congratulations!")
     print("You had " + str(fehl) + " failed attemps.")
