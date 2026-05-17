@@ -1,36 +1,54 @@
 import random
-int key
-int VZ
-str mes
+
 
 def genKey():
-    if random.randint(1, 0) == 1:
+    if random.randint(0, 1) > 0.5:
         VZ = 1
     else:
         VZ = 0
         
-    key = andom.randint(1, 500)
+    key = random.randint(1, 500)
     if VZ == 0:
         key = 0 - key
-print("Welcome to Crypto_Text!")
+        
+    return key
+
+
+
+def crypto(mes, mode):
+    if mode == 1:
+        bmes = list(mes)
+        for i in range (len(bmes)):
+            bmes[i] = ord(bmes[i])
+            bmes[i] = chr(bmes[i] + key)
+            
+        return "".join(bmes)
+            
+
+    
+ print("Welcome to Crypto_Text!")  
+
 
 while True:
     print("Do you want to Encrypt or Decrypt? (En/De)")
     if "EN" in input().upper():
-        print("Choose your key (every number possible) or type generate for a key which is saver")
-        try:
-            key = int(input())
-        except:
+        print('Choose your key (every number possible) or type "generate" for a key which is saver')
+        sp = input()
+        if "GEN" in sp.upper():
             key = genKey()
+        else:
+            key = int(sp)
             
             
         print("Type in the message that should be encrypted")
         mes = str(input())
         
         print("Your encrypted message is: ")
+        print(" ")
         print(str(crypto(mes, 1)))
+        print(" ")
         print("Please don't forget your Key: " + str(key))
             
         
         
-    else:
+    #else:
