@@ -1,19 +1,6 @@
 import random
 
 
-def genKey():
-    if random.randint(0, 1) > 0.5:
-        VZ = 1
-    else:
-        VZ = 0
-        
-    key = random.randint(1, 500)
-    if VZ == 0:
-        key = 0 - key
-        
-    return key
-
-
 
 def crypto(mes,mode):
     if mode == 1:
@@ -39,7 +26,7 @@ while True:
         print('Choose your key (a number bigger than 0) or type "generate" for a key which is saver')
         sp = input()
         if "GEN" in sp.upper():
-            key = genKey()
+            key = random.randint(50, 99999) 
         else:
             key = int(sp)
             
