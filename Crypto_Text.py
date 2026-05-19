@@ -7,12 +7,12 @@ def crypto(mes,mode):
         bmes = list(mes)
         for i in range (len(bmes)):
             bmes[i] = ord(bmes[i])
-            bmes[i] = chr(bmes[i] + key)
+            bmes[i] = chr(bmes[i] + random.randint(100, 100000))
     else:
         bmes = list(mes)
         for i in range (len(bmes)):
             bmes[i] = ord(bmes[i])
-            bmes[i] = chr(bmes[i] - key)
+            bmes[i] = chr(bmes[i] - random.randint(100, 100000))
     return "".join(bmes)
             
 
@@ -26,11 +26,12 @@ while True:
         print('Choose your key (a number bigger than 0) or type "generate" for a key which is saver')
         sp = input()
         if "GEN" in sp.upper():
-            key = random.randint(50, 99999) 
+            key = random.randint(50, 9999) 
         else:
             key = int(sp)
             
-            
+        random.seed(key)
+        
         print("Type in the message that should be encrypted")
         mes = str(input())
         
@@ -47,6 +48,7 @@ while True:
         mes = str(input())
         print("Type in the Key")
         key = int(input())
+        random.seed(key)
         print(" ")
         print("The decrypted message is: ")
         print(" ")
