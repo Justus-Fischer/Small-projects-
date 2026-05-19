@@ -2,7 +2,7 @@ import random
 
 
 
-def crypto(mes,mode, bkey):
+def crypto(mes,mode):
     
     if mode == 1:
         bmes = list(mes)
@@ -38,7 +38,7 @@ while True:
         
         print("Your encrypted message is: ")
         print(" ")
-        print(str(crypto(mes,1,key)))
+        print(str(crypto(mes,1)))
         print(" ")
         print("Please don't forget your Key: " + str(key))
             
@@ -53,5 +53,5 @@ while True:
         print(" ")
         print("The decrypted message is: ")
         print(" ")
-        print(str(crypto(mes,2,key)))
+        print(str(crypto(mes,2)))
         print(" ")
